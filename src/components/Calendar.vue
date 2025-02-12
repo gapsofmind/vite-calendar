@@ -1,3 +1,4 @@
+<!-- I am in vue-cal branch -->
 <template>
   <div class="calendar">
     <h1>The year {{ calendar.year }}</h1>
