@@ -7,7 +7,7 @@
 </script>
 
 <template>
-  <img alt="" src="/assets/dragonicon.webp" />
+  <img alt="" src="/assets/mglogo.webp" />
   <p>{{ msg }}</p>
 </template>
 
@@ -15,4 +15,9 @@
   p {
     font-weight: bold;
   }
+
+  img {
+    width: 30%
+  }
+
 </style>

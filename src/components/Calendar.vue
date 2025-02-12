@@ -1,3 +1,5 @@
+<!-- detta är en template för att rendera en kalender -->
+
 <template>
   <div id="app">
     <vue-cal @cell-click="handleCellClick" :events="events"></vue-cal>
@@ -29,4 +31,8 @@ export default {
 
 <style>
 /* Add any additional styling you need */
+body {
+  background-color: #1C2630;
+  color: white
+}
 </style>
