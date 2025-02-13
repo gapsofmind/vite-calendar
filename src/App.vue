@@ -1,19 +1,23 @@
 <script>
   import Logo from "./components/Logo.vue";
   import Calendar from "./components/Calendar.vue";
+  import Holidays from "./components/Holidays.vue";
+
 
 
 
   export default {
     components: {
       Logo,
-      Calendar
+      Calendar,
+      Holidays
     }
   };
 </script>
 
 <template>
   <Logo msg="Project Vite Calender"/>
-    <Calendar/>
+  <Calendar/>
+  <Holidays/>
 
 </template>

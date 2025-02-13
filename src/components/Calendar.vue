@@ -1,10 +1,6 @@
 <!-- detta är en template för att rendera en kalender -->
 
-<template>
-  <div id="app">
-    <vue-cal @cell-click="handleCellClick" :events="events"></vue-cal>
-  </div>
-</template>
+
 
 <script>
 import VueCal from 'vue-cal';
@@ -16,23 +12,39 @@ export default {
   },
   data() {
     return {
-      events: [
+      /* events: [
         { start: new Date(), end: new Date(), title: 'Today\'s event' }
-      ]
+      ] */
+     events: []
     };
   },
   methods: {
-    handleCellClick(event) {
-      console.log('Cell clicked', event);
+    handleCellClick(date) {
+      const newEvent = {
+        start: date,                // Use the clicked date as the start time
+        end: date,                  // For simplicity, set end time to the same day (can be extended)
+        title: 'New Event'          // Default title for the new event
+      };
+      
+      // Push the new event to the events array
+      this.events.push(newEvent);
+
+      console.log('New event added:', newEvent);
     }
   }
 }
 </script>
 
+<template>
+  <div id="app">
+    <vue-cal @cell-click="handleCellClick" :events="events"></vue-cal>
+  </div>
+</template>
+
 <style>
-/* Add any additional styling you need */
+
 body {
   background-color: #1C2630;
-  color: white
+  color: rgb(224, 224, 224)
 }
 </style>
