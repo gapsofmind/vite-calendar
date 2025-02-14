@@ -13,6 +13,7 @@
     
 <script>
   export default {
+    emits: ['holidays-fetched'],
     data() {
     return {
       holidays: [],
@@ -22,29 +23,16 @@
   },
   methods: {
     fetchHolidays() {
-      if (this.yearForHolidayFetch && this.countryCodeFetch) {
-        fetch(`https://date.nager.at/api/v3/publicholidays/${this.yearForHolidayFetch}/${this.countryCodeFetch}`)
-          .then(response => response.json())
-          .then(holidays => {
-            this.holidays = holidays;
-          })
-          .catch(error => console.error('Error fetching holidays:', error));
-      }
+      fetch(`https://date.nager.at/api/v3/publicholidays/${this.yearForHolidayFetch}/${this.countryCodeFetch}`)
+        .then(response => response.json())
+        .then(holidays => {
+          this.holidays = holidays;
+          this.$emit('holidays-fetched', holidays);
+        })
+        .catch(error => console.error('Error fetching holidays:', error));
     }
   },
-/*   watch: {
-    // Optionally fetch when inputs change, comment out if using button
-    yearForHolidayFetch(newVal, oldVal) {
-      if (newVal && this.countryCodeFetch) {
-        this.fetchHolidays();
-      }
-    },
-    countryCodeFetch(newVal, oldVal) {
-      if (newVal && this.yearForHolidayFetch) {
-        this.fetchHolidays();
-      }
-    }
-  }, */
+
   mounted() {
     this.fetchHolidays(); // Initial fetch with default values
   }
