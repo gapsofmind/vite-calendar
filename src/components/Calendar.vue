@@ -5,6 +5,7 @@
 <script>
 import VueCal from 'vue-cal';
 import 'vue-cal/dist/vuecal.css'; // Import vue-cal CSS
+/* import */ 
 
 export default {
   components: {
@@ -30,12 +31,21 @@ export default {
       this.events.push(newEvent);
 
       console.log('New event added:', newEvent);
+    },
+    addHolidayToCalendar (holidayDate) {
+      const newEvent = {
+        start: holidayDate,
+        end: holidayDate,
+        title: holiday.name
+      }
     }
   }
 }
 </script>
 
 <template>
+  <div>Add Holidays To Calendar</div>
+  <button @click="addHolidayToCalendar">Add Holidays</button>
   <div id="app">
     <vue-cal @cell-click="handleCellClick" :events="events"></vue-cal>
   </div>
