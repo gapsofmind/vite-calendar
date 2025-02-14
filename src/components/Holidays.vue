@@ -1,3 +1,16 @@
+  <template>
+      <h1>Holidays</h1>
+      <div>Enter year and country code:</div>
+      <input v-model="yearForHolidayFetch" placeholder="Year">
+      <input v-model="countryCodeFetch" placeholder="Country Code">
+      <button @click="fetchHolidays">Fetch Holidays</button>
+      <ul>
+        <li v-for="holiday in holidays" :key="holiday.date">
+          {{ holiday.name }} - {{ holiday.localName }} - {{ holiday.date }}
+        </li>
+      </ul>
+    </template>
+    
 <script>
   export default {
     data() {
@@ -41,18 +54,6 @@
 
 </script>
 
-<template>
-    <h1>Holidays</h1>
-    <div>Enter year and country code:</div>
-    <input v-model="yearForHolidayFetch" placeholder="Year">
-    <input v-model="countryCodeFetch" placeholder="Country Code">
-    <button @click="fetchHolidays">Fetch Holidays</button>
-    <ul>
-      <li v-for="holiday in holidays" :key="holiday.date">
-        {{ holiday.name }} - {{ holiday.localName }} - {{ holiday.date }}
-      </li>
-    </ul>
-  </template>
 
 
 

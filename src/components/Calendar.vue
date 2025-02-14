@@ -1,11 +1,15 @@
 <!-- detta är en template för att rendera en kalender -->
-
-
+<template>
+  <div>Add Holidays To Calendar</div>
+  <button @click="addHolidayToCalendar">Add Holidays</button>
+  <div id="app">
+    <vue-cal @cell-click="handleCellClick" :events="events"></vue-cal>
+  </div>
+</template>
 
 <script>
 import VueCal from 'vue-cal';
-import 'vue-cal/dist/vuecal.css'; // Import vue-cal CSS
-/* import */ 
+import 'vue-cal/dist/vuecal.css'; 
 
 export default {
   components: {
@@ -13,9 +17,6 @@ export default {
   },
   data() {
     return {
-      /* events: [
-        { start: new Date(), end: new Date(), title: 'Today\'s event' }
-      ] */
      events: []
     };
   },
@@ -43,13 +44,6 @@ export default {
 }
 </script>
 
-<template>
-  <div>Add Holidays To Calendar</div>
-  <button @click="addHolidayToCalendar">Add Holidays</button>
-  <div id="app">
-    <vue-cal @cell-click="handleCellClick" :events="events"></vue-cal>
-  </div>
-</template>
 
 <style>
 
