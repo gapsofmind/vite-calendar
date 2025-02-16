@@ -24,8 +24,8 @@ export default {
     handleCellClick(date) {
       const newEvent = {
         start: date,                // Use the clicked date as the start time
-        end: date,                  // For simplicity, set end time to the same day (can be extended)
-        title: 'New Event'          // Default title for the new event
+        end: new Date(date.getTime() + (2 * 60 * 60 * 1000)), //sets end time to 2 hours after start
+        title: 'New Events, 2 hours by default'          // Default title for the new event
       };
       
       // Push the new event to the events array
