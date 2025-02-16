@@ -31,7 +31,7 @@ export default {
     handleCellClick(date) {
       const newEvent = {
         start: date,
-        end: date,
+        end: new Date(date.getTime() + (2 * 60 * 60 * 1000)),
         title: 'New Event'
       };
       this.events.push(newEvent);
