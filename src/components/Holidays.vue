@@ -25,28 +25,16 @@
       if (this.yearForHolidayFetch && this.countryCodeFetch) {
         fetch(`https://date.nager.at/api/v3/publicholidays/${this.yearForHolidayFetch}/${this.countryCodeFetch}`)
           .then(response => response.json())
-          .then(holidays => {
-            this.holidays = holidays; //payload from api to use in this component
-            this.$emit('fetched-holidays', holidays) // custom event and payload to pass on to parent App.vue
-            console.log(holidays)
+          .then(holidaysArray => {
+            this.holidays = holidaysArray; //payload from api to use in this component
+            this.$emit('fetched-holidays', holidaysArray) // custom event and payload to pass on to parent App.vue
+            console.log("methods:fethHolidays" + holidaysArray)
           })
           .catch(error => console.error('Error fetching holidays:', error));
       }
     }
   },
-/*   watch: {
-    // Optionally fetch when inputs change, comment out if using button
-    yearForHolidayFetch(newVal, oldVal) {
-      if (newVal && this.countryCodeFetch) {
-        this.fetchHolidays();
-      }
-    },
-    countryCodeFetch(newVal, oldVal) {
-      if (newVal && this.yearForHolidayFetch) {
-        this.fetchHolidays();
-      }
-    }
-  }, */
+
   mounted() {
     this.fetchHolidays(); // Initial fetch with default values
   }

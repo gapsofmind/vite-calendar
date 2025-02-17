@@ -33,11 +33,17 @@ export default {
 
       console.log('New event added:', newEvent);
     },
-    addHolidayToCalendar (holidayDate) {
+/*     addHolidayToCalendar (holidayDate) {
       const newEvent = {
         start: holidayDate,
         end: holidayDate,
         title: holiday.name
+      }
+    }, */
+    props: {
+      fetchedHolidays: {
+        type:Object,
+        default : () => [{ holidayDetails: [] }]
       }
     }
   }

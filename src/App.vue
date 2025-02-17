@@ -1,10 +1,10 @@
   <template>
     <Logo msg="Project Vite Calender"/>
-    <Calendar/>
-    <Holidays/>
+    
     <div>
-      <holidays @fetched-holidays="sendHolidaysToData"></holidays> //event listener,methods sends payload to data()
-    </div>
+      <calendar :fetched-holidays="fetchedHolidays"></calendar>
+      <holidays @fetched-holidays="storeHolidaysArrayData"></holidays> <!-- event listener,methods sends payload to data() -->
+    </div> 
   
   </template>
 
@@ -25,8 +25,9 @@
       };
     },
     methods: {
-      sendHolidaysToData (holidays) {
-        this.fetchedHolidays = holidays;
+      storeHolidaysArrayData (holidaysArray) {
+        this.fetchedHolidays = holidaysArray;
+        console.log("methods: storeHolidaysArradyData" + this.fetchedHolidays)
       }
     }
   };
