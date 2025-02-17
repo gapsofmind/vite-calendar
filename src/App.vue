@@ -2,6 +2,9 @@
     <Logo msg="Project Vite Calender"/>
     <Calendar/>
     <Holidays/>
+    <div>
+      <holidays @fetched-holidays="sendHolidaysToData"></holidays> //event listener,methods sends payload to data()
+    </div>
   
   </template>
 
@@ -15,6 +18,16 @@
       Logo,
       Calendar,
       Holidays
+    },
+    data() {
+      return {
+        fetchedHolidays: null
+      };
+    },
+    methods: {
+      sendHolidaysToData (holidays) {
+        this.fetchedHolidays = holidays;
+      }
     }
   };
 </script>

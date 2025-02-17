@@ -26,7 +26,9 @@
         fetch(`https://date.nager.at/api/v3/publicholidays/${this.yearForHolidayFetch}/${this.countryCodeFetch}`)
           .then(response => response.json())
           .then(holidays => {
-            this.holidays = holidays;
+            this.holidays = holidays; //payload from api to use in this component
+            this.$emit('fetched-holidays', holidays) // custom event and payload to pass on to parent App.vue
+            console.log(holidays)
           })
           .catch(error => console.error('Error fetching holidays:', error));
       }
