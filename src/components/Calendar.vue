@@ -26,6 +26,24 @@ export default {
     default: () => []
   }
 },
+/* For debugging */
+
+watch: {
+    // Watch for changes in fetchedHolidays
+    fetchedHolidays(newVal) {
+      console.log("📩 Prop updated in Calendar.vue:", newVal);
+
+      // Convert fetched holidays into VueCal event format
+      this.events = newVal.map(holiday => ({
+        start: new Date(holiday.date),  // Ensure date is properly converted
+        end: new Date(holiday.date),
+        title: holiday.name
+      }));
+
+      console.log("🗓 Events updated in Calendar.vue:", this.events);
+    }
+  },
+
   methods: {
     handleCellClick(date) {
       const newEvent = {

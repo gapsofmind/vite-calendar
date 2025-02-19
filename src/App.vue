@@ -27,7 +27,7 @@
     methods: {
       storeHolidaysArrayData (holidaysArray) {
         this.fetchedHolidays = holidaysArray;
-        console.log("methods: storeHolidaysArradyData" + this.fetchedHolidays)
+        console.log("fetch reached App.vue" + this.fetchedHolidays)
       }
     }
   };
