@@ -13,6 +13,8 @@
     
 <script>
   export default {
+    emits: ['fetched-holidays'],
+    
     data() {
     return {
       holidays: [],

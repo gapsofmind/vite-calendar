@@ -20,6 +20,12 @@ export default {
      events: []
     };
   },
+  props: {
+  fetchedHolidays: {
+    type: Array,
+    default: () => []
+  }
+},
   methods: {
     handleCellClick(date) {
       const newEvent = {
@@ -40,12 +46,6 @@ export default {
         title: holiday.name
       }
     }, */
-    props: {
-      fetchedHolidays: {
-        type:Object,
-        default : () => [{ holidayDetails: [] }]
-      }
-    }
   }
 }
 </script>
