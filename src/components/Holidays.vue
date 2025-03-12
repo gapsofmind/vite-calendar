@@ -5,6 +5,10 @@
     Clickt button to fetch for {{ yearForHolidayFetch }} and countryode
     {{ countryCodeFetch }}
   </div>
+  <div v-if="countryCodeFetch === 'SE'">
+    Your are viewing holidays in Sweden
+  </div>
+  <div v-else>You are viewing holidays in another country then sweden</div>
   <input v-model="yearForHolidayFetch" placeholder="Year" />
   <input v-model="countryCodeFetch" placeholder="Country Code" />
   <button @click="fetchHolidays">Fetch Holidays</button>
