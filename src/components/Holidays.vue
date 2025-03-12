@@ -7,8 +7,13 @@
   </div>
   <div v-if="countryCodeFetch === 'SE'">
     Your are viewing holidays in Sweden
+    <img alt="" v-bind:src="swedishFlag" />
   </div>
-  <div v-else>You are viewing holidays in another country then sweden</div>
+  <div v-else>
+    You are viewing holidays in another country then sweden <img alt=""
+    v-bind:src="earthFlag"
+  </div>
+
   <input v-model="yearForHolidayFetch" placeholder="Year" />
   <input v-model="countryCodeFetch" placeholder="Country Code" />
   <button @click="fetchHolidays">Fetch Holidays</button>
@@ -28,6 +33,8 @@ export default {
       holidays: [],
       yearForHolidayFetch: "2025", // Default  year
       countryCodeFetch: "SE", // Default country-code
+      swedishFlag: "swedishflag.jpg",
+      earthFlag: "flagearth.png",
     };
   },
   methods: {
