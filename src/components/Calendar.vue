@@ -28,16 +28,16 @@ export default {
       default: () => [],
     },
   },
-  /* For debugging */
+  /* debugging */
 
   watch: {
-    // Watch for changes in fetchedHolidays
+    // watch changes in fetchedHolidays
     fetchedHolidays(newVal) {
       console.log("Prop updated in Calendar.vue:", newVal);
 
-      // Convert fetched holidays into VueCal event format
+      // convert fetched holidays into VueCal event format
       this.events = newVal.map((holiday) => ({
-        start: new Date(holiday.date), // Ensure date is properly converted
+        start: new Date(holiday.date), // ensure date properly converted
         end: new Date(holiday.date),
         title: holiday.name,
       }));
@@ -49,12 +49,12 @@ export default {
   methods: {
     handleCellClick(date) {
       const newEvent = {
-        start: date, // Use the clicked date as the start time
+        start: date, // use clicked date as start time
         end: new Date(date.getTime() + 2 * 60 * 60 * 1000), //sets end time to 2 hours after start
-        title: "New Events, 2 hours by default", // Default title for the new event
+        title: "New Events, 2 hours by default", // default title for the new event
       };
 
-      // Push the new event to the events array
+      // push new event to events array
       this.events.push(newEvent);
 
       console.log("New event added:", newEvent);

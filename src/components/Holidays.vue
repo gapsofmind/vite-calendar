@@ -6,12 +6,12 @@
     {{ countryCodeFetch }}
   </div>
   <div v-if="countryCodeFetch === 'SE'">
-    Your are viewing holidays in Sweden
+    Your are viewing holidays in Sweden <br />
     <img alt="" v-bind:src="swedishFlag" />
   </div>
   <div v-else>
-    You are viewing holidays in another country then sweden <img alt=""
-    v-bind:src="earthFlag"
+    You are viewing holidays in another country then sweden <br />
+    <img alt="" v-bind:src="earthFlag"
   </div>
 
   <input v-model="yearForHolidayFetch" placeholder="Year" />
@@ -31,8 +31,8 @@ export default {
   data() {
     return {
       holidays: [],
-      yearForHolidayFetch: "2025", // Default  year
-      countryCodeFetch: "SE", // Default country-code
+      yearForHolidayFetch: "2025",
+      countryCodeFetch: "SE",
       swedishFlag: "swedishflag.jpg",
       earthFlag: "flagearth.png",
     };
@@ -56,7 +56,7 @@ export default {
   },
 
   mounted() {
-    this.fetchHolidays(); // Initial fetch with default values
+    this.fetchHolidays();
   },
 };
 </script>

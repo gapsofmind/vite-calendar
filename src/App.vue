@@ -1,8 +1,6 @@
 <template>
   <Logo msg="Project Vite Calender" />
 
-  <div>About Home And so on</div>
-
   <div>
     <calendar :fetched-holidays="fetchedHolidays"></calendar>
     <holidays @fetched-holidays="storeHolidaysArrayData"></holidays>
