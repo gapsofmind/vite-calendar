@@ -1,6 +1,8 @@
 <!-- detta är en template för att rendera en kalender -->
 <template>
-  <div>Add Holidays To Calendar</div>
+  <div>
+    <a href="SPAindex.html">Go to SPA</a>
+  </div>
   <button @click="addHolidayToCalendar">Add Holidays</button>
   <div id="app">
     <vue-cal @cell-click="handleCellClick" :events="events"></vue-cal>
