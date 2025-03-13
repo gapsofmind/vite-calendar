@@ -1,9 +1,9 @@
 <!-- detta är en template för att rendera en kalender -->
 <template>
   <div>
-    <a href="SPAindex.html">Go to SPA</a>
+    <a href="SPAindex.html">Go to SPA with no content. Real fun!</a>
   </div>
-  <button @click="addHolidayToCalendar">Add Holidays</button>
+  <button @click="recieveEmitToProp">Recieve meaningless emit</button>
   <div id="app">
     <vue-cal @cell-click="handleCellClick" :events="events"></vue-cal>
   </div>
@@ -59,6 +59,8 @@ export default {
 
       console.log("New event added:", newEvent);
     },
+
+    recieveEmitToProp() {},
     /*     addHolidayToCalendar (holidayDate) {
       const newEvent = {
         start: holidayDate,
