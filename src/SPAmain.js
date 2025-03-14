@@ -2,24 +2,25 @@
 
 const app = Vue.createApp({})
 
-const About = { template: '<h1>Om</h1>' }
+const TheFirst = { template: '<h1>theFirst</h1> <p> A robot may not injure a human being or, through inaction, allow a human being to come to harm.</p>' }
 
-const Contact = { template: '<h1>Kontakt</h1>' }
+const TheSecond = { template: '<h1>theSeond</h1> <p>A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.</p>' }
 
-const Home = { template: '<h1>Hem</h1>' }
+const TheThird = { template: '<h1>theThird</h1> <p>A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.</p>'  }
+
 
 const routes = [
   {
-    component: About,
-    path: '/about'
-  },
-  {
-    component: Contact,
-    path: '/contact'
-  },
-  {
-    component: Home,
+    component: TheFirst,
     path: '/'
+  },
+  {
+    component: TheSecond,
+    path: '/thesecond'
+  },
+  {
+    component: TheThird,
+    path: '/thethird'
   }
 ]
 

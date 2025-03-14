@@ -1,7 +1,19 @@
 <!-- detta är en template för att rendera en kalender -->
 <template>
+  <div
+    style="
+      background-color: lightblue;
+      display: inline-block;
+      border-radius: 50px;
+    "
+  >
+    <a href="SPAindex.html"> Go to Single Page Application </a>
+  </div>
   <div>
-    <a href="SPAindex.html">Go to SPA with no content. Real fun!</a>
+    <p>This is a list recived as a prop</p>
+    <div v-for="holiday in fetchedHolidays" :key="holiday.date">
+      {{ holiday.name }} - {{ holiday.localName }} - {{ holiday.date }}
+    </div>
   </div>
   <button @click="recieveEmitToProp">Recieve meaningless emit</button>
   <div id="app">
@@ -28,7 +40,8 @@ export default {
       default: () => [],
     },
   },
-  /* debugging */
+
+  /* watcher for debugging, check array revieved */
 
   watch: {
     // watch changes in fetchedHolidays

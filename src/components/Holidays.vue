@@ -48,7 +48,7 @@ export default {
             this.holidays = holidaysArray; //payload from api to use in this component
             this.$emit("fetched-holidays", holidaysArray); // custom event and payload to pass on to parent App.vue
 
-            console.log("methods:fethHolidays" + holidaysArray);
+            console.log("methods:fethHolidays");
           })
           .catch((error) => console.error("Error fetching holidays:", error));
       }

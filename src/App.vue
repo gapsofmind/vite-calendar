@@ -27,7 +27,7 @@ export default {
   methods: {
     storeHolidaysArrayData(holidaysArray) {
       this.fetchedHolidays = holidaysArray;
-      console.log("fetch reached App.vue" + this.fetchedHolidays);
+      console.log("fetch reached App.vue");
     },
   },
 };
